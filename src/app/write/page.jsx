@@ -1,19 +1,19 @@
 "use client";
 
-import Image from "next/image";
-import styles from "./writePage.module.css";
-import { useEffect, useState } from "react";
-import "react-quill/dist/quill.bubble.css";
-import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
 import {
+  getDownloadURL,
   getStorage,
   ref,
   uploadBytesResumable,
-  getDownloadURL,
 } from "firebase/storage";
-import { app } from "'utils/firebase"' (see below for file content);
+import { useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import "react-quill/dist/quill.bubble.css";
+import { app } from "../../utils/firebase";
+import styles from "./writePage.module.css";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
